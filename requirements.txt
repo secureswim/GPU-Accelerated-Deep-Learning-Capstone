@@ -1,0 +1,32 @@
+# GPU-Accelerated Deep Learning Capstone
+# ----------------------------------------
+# Core deep learning stack
+torch>=2.1.0
+torchvision>=0.16.0
+
+# Plotting
+matplotlib>=3.7.0
+numpy>=1.24.0
+
+# Optional: interactive profiling viewer (open trace JSON yourself in chrome://tracing)
+# No extra packages needed for torch.profiler
+
+# ─── Installation Notes ────────────────────────────────────────────────────────
+#
+# 1. Install PyTorch with CUDA support (replace cu121 with your CUDA version):
+#
+#    pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+#
+# 2. Then install remaining deps:
+#
+#    pip install -r requirements.txt
+#
+# 3. Verify CUDA is available:
+#
+#    python -c "import torch; print(torch.cuda.is_available(), torch.cuda.get_device_name(0))"
+#
+# 4. The custom CUDA kernel (custom_kernel.cu) is JIT-compiled automatically
+#    via torch.utils.cpp_extension — no manual nvcc step required.
+#    You need: nvcc (part of CUDA Toolkit), a C++17-capable compiler (g++ or MSVC).
+#
+# CUDA Toolkit download: https://developer.nvidia.com/cuda-downloads

@@ -1,0 +1,24 @@
+GPU: Tesla T4
+Custom kernel: True
+
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                                   Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg     Self CUDA   Self CUDA %    CUDA total  CUDA time avg       CPU Mem  Self CPU Mem      CUDA Mem  Self CUDA Mem    # of Calls  
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                          ProfilerStep*         0.00%       0.000us         0.00%       0.000us       0.000us     218.619ms        80.92%     218.619ms      43.724ms           0 B           0 B           0 B           0 B             5  
+                                               backward         0.00%       0.000us         0.00%       0.000us       0.000us     209.872ms        77.68%     209.872ms      41.974ms           0 B           0 B           0 B           0 B             5  
+autograd::engine::evaluate_function: ConvolutionBack...         0.09%     729.654us         1.75%      13.831ms     461.020us       0.000us         0.00%      97.261ms       3.242ms           0 B           0 B      -1.11 GB      -1.78 GB            30  
+                                   ConvolutionBackward0         0.05%     414.403us         1.65%      13.101ms     436.699us       0.000us         0.00%      97.261ms       3.242ms           0 B           0 B     691.54 MB           0 B            30  
+                             aten::convolution_backward         1.11%       8.770ms         1.60%      12.687ms     422.885us      97.261ms        36.00%      97.261ms       3.242ms           0 B           0 B     691.54 MB     680.00 MB            30  
+                                          ProfilerStep*         0.19%       1.501ms        91.86%     727.423ms     145.485ms       0.000us         0.00%      93.308ms      18.662ms           0 B           0 B           0 B     -30.02 MB             5  
+                                           aten::conv2d         0.08%     637.087us         2.62%      20.722ms     345.370us       0.000us         0.00%      91.704ms       1.528ms           0 B           0 B       2.21 GB           0 B            60  
+                                                forward         0.00%       0.000us         0.00%       0.000us       0.000us      87.280ms        32.30%      87.280ms      17.456ms           0 B           0 B           0 B           0 B             5  
+                                                forward         2.05%      16.221ms         7.32%      57.938ms      11.588ms       0.000us         0.00%      84.348ms      16.870ms           0 B           0 B       4.03 GB     -11.31 MB             5  
+                                      aten::convolution         0.08%     647.866us         1.09%       8.596ms     286.527us       0.000us         0.00%      45.674ms       1.522ms           0 B           0 B       1.09 GB           0 B            30  
+                                     aten::_convolution         0.09%     721.545us         1.00%       7.948ms     264.931us       0.000us         0.00%      45.674ms       1.522ms           0 B           0 B       1.09 GB           0 B            30  
+                                aten::cudnn_convolution         0.69%       5.453ms         0.91%       7.226ms     240.880us      45.674ms        16.91%      45.674ms       1.522ms           0 B           0 B       1.09 GB       1.09 GB            30  
+autograd::engine::evaluate_function: CudnnBatchNormB...         0.62%       4.896ms         1.59%      12.590ms     419.668us       0.000us         0.00%      34.582ms       1.153ms           0 B           0 B      -1.09 GB      -2.19 GB            30  
+                                CudnnBatchNormBackward0         0.30%       2.414ms         0.97%       7.694ms     256.463us       0.000us         0.00%      34.582ms       1.153ms           0 B           0 B       1.09 GB           0 B            30  
+                        aten::cudnn_batch_norm_backward         0.20%       1.545ms         0.67%       5.280ms     175.986us      34.582ms        12.80%      34.582ms       1.153ms           0 B           0 B       1.09 GB           0 B            30  
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+Self CPU time total: 791.885ms
+Self CUDA time total: 270.183ms
