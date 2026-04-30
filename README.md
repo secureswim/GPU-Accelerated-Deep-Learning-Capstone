@@ -157,31 +157,6 @@ View results: open `chrome://tracing` in Chrome and load any `.json` from `outpu
 
 ---
 
-## 📊 Results
-
-### Benchmark: Custom Kernel vs PyTorch GPU vs CPU
-
-| Tensor Size | Custom Kernel (ms) | PyTorch GPU (ms) | CPU (ms) | Speedup vs CPU |
-|---|---|---|---|---|
-| 64K | 0.042 | 0.059 | 2.83 | **67×** |
-| 256K | 0.102 | 0.149 | 11.23 | **110×** |
-| 1M | 0.381 | 0.563 | 44.23 | **116×** |
-| 4M | 1.492 | 2.234 | 177.23 | **119×** |
-| 16M | 5.823 | 8.912 | 711.23 | **122×** |
-
-Custom kernel is consistently **~1.5× faster** than the unfused PyTorch GPU path, and **67–122× faster** than CPU.
-
-### Training Results (15 epochs, CIFAR-10)
-
-| Metric | Value |
-|---|---|
-| Final validation accuracy | ~68.6% |
-| Best validation loss | 0.853 |
-| Avg. epoch time | ~18s |
-| Peak GPU memory | ~1863 MB |
-
----
-
 ## 🎓 How This Demonstrates GPU Programming
 
 This project goes beyond calling GPU-enabled libraries by:
